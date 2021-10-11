@@ -94,3 +94,7 @@ function restricted(req, res, next) {
 7. import "restricted in the users-router and 
 8. pull into server
 9. test in httpie and look for console.log
+10. Build out Models
+11. finalize routers now that middlware is done
+    1.  if you use try catch and use a method with a promise be sure to use async/await
+    2.  

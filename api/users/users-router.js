@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { restricted } = require('../auth/auth-middleware');
+const User = require('./users-model');
 
 /**
   [GET] /api/users
@@ -32,8 +33,13 @@ const { restricted } = require('../auth/auth-middleware');
   // });
   
   //STUB TO TEST
-  router.get('/', restricted, (req, res, next) => {
-    res.json('users');
+  router.get('/', restricted, async (req, res, next) => {
+    try {
+      const users = await User.find();
+      res.json(users); //status code defaults to 200
+    } catch (error) {
+      next(error);
+    }
   });
 
   module.exports = router;
