@@ -32,7 +32,7 @@ const { restricted } = require('../auth/auth-middleware');
   // });
   
   //STUB TO TEST
-  router.get('/', (req, res, next)=>{
+  router.get('/', restricted, (req, res, next) => {
     res.json('users');
   });
 

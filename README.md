@@ -80,12 +80,17 @@ The database `auth.db3` includes a single `users` table:
     res.json('register');
     });
 ```
-4. Stubb out middlewares
+4. pull into server.js
+5. test in httpie
+6. Stubb out middlewares
    1. remember to import/exprot
    2. example stubb
 ```javascript
 function restricted(req, res, next) {
+  console.log('restricted middlware working');
   next();
 }
 ```
-5. 
+7. import "restricted in the users-router and 
+8. pull into server
+9. test in httpie and look for console.log

@@ -7,8 +7,8 @@
   }
 */
 function restricted(req, res, next) {
+  console.log('restricted middlware working');
   next();
-
 }
 
 /*
