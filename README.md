@@ -64,3 +64,28 @@ The database `auth.db3` includes a single `users` table:
 ### Task 3: Stretch Goals
 
 - Build a React application that implements components to register, login and view a list of users. Gotta keep sharpening your React skills.
+
+
+## Steps
+
+1. check package.json
+   1. npm i bcrptjs
+   2. npm i express-session
+2. review eslint rules
+3. Stubb Server to Routers
+   1. Remember to import/export top/bottom
+   2. exmample stubb
+```javascript
+    router.post('/register', (req, res, next)=>{
+    res.json('register');
+    });
+```
+4. Stubb out middlewares
+   1. remember to import/exprot
+   2. example stubb
+```javascript
+function restricted(req, res, next) {
+  next();
+}
+```
+5. 
