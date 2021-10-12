@@ -115,4 +115,6 @@ http :5000/api/auth/logout
 13.  Continue Building out Server
      1.   __npm i connect-session-knex__
      2.   const Store = require('connect-session-knex')(session);
-     3.   
+     3.   build out server.use(session() with cookie in server.js
+14.  Convert Routers from stubbs to complete
+     1.   
