@@ -111,4 +111,8 @@ http post :5000/api/auth/login
 http :5000/api/auth/logout
 ```
   2.  Pull models into middlware
-  3.  
+  3.  build out each middleware  test/debug along the way
+13.  Continue Building out Server
+     1.   __npm i connect-session-knex__
+     2.   const Store = require('connect-session-knex')(session);
+     3.   
