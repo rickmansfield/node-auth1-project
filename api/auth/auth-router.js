@@ -56,7 +56,8 @@ router.post('/register', checkPasswordLength, checkUsernameFree, (req, res, next
   }
  */
 router.post('/login', checkUsernameExists, (req, res, next) => {
-  res.json('login');
+  const { password } = req.body;
+  if (bcrypt.compareSync())
 });
 
 /**
