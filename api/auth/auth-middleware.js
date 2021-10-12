@@ -20,9 +20,18 @@ function restricted(req, res, next) {
     "message": "Username taken"
   }
 */
-function checkUsernameFree(req, res, next) {
-  next();
-
+async function checkUsernameFree(req, res, next) {
+  try {
+    const users = await User.findBy({ username: req.body.username});
+    if (!users.length) {
+      next();
+    }
+    else {
+      next({ "message": "Username taken" });
+    }
+  } catch (err) {
+    next(err);
+  }
 }
 
 /*
