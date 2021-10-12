@@ -8,8 +8,14 @@ const User = require('../users/users-model')
   }
 */
 function restricted(req, res, next) {
-  console.log('restricted middlware working');
-  next();
+  if (req.session.user) {
+    next();
+  } else {
+    next({
+      message: `You shall not pass!`,
+      status: 401,
+    });
+  }
 }
 
 /*

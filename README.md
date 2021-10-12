@@ -117,4 +117,4 @@ http :5000/api/auth/logout
      2.   const Store = require('connect-session-knex')(session);
      3.   build out server.use(session() with cookie in server.js
 14.  Convert Routers from stubbs to complete
-     1.   
+15. Complete auth-middleware function restricted()
