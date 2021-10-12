@@ -83,7 +83,24 @@ router.post('/login', checkUsernameExists, (req, res, next) => {
   }
  */
 router.get('/logout', (req, res, next) => {
-  res.json('logout');
+  if (req.session.user) {
+    req.session.destroy((err) => {
+      if (err) {
+        res.json({
+          message: 'you cannot leave!'
+        });
+      } else {
+        // set a cookie in the past
+        res.json({
+          message: `goodbye, nice having you!`
+        });
+      }
+    });
+  } else {
+    res.json({
+       message: 'you were not logged in to begin with!'
+    });
+  }
 });
 
 // Don't forget to add the router to the `exports` object so it can be required in other modules
