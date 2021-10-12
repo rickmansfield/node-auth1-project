@@ -97,8 +97,8 @@ function restricted(req, res, next) {
 10. Build out Models
 11. finalize routers now that middlware is done
     1.  if you use try catch and use a method with a promise be sure to use async/await
-12. Start Building out auth-middleware except for "restricted."
-13. test 
+12. Building out auth-middleware except for "restricted." 
+    1.  First go to auth.router and pull methods from auth-middleware & test 
 ```json
 http post :5000/api/auth/register
 
@@ -110,4 +110,5 @@ http post :5000/api/auth/login
 
 http :5000/api/auth/logout
 ```
-14. Start
+  2.  Pull models into middlware
+  3.  
