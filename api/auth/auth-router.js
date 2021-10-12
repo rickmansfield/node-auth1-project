@@ -60,9 +60,9 @@ router.post('/login', checkUsernameExists, (req, res, next) => {
   if (bcrypt.compareSync(password, req.user.password)) {
     req.session.user = req.user;
     res.status(200).json({ message: `Welcome back ${req.user.username}` });
-  } else{
+  } else {
     next({
-      status:401, message: 'Invalid credentials'
+      status: 401, message: 'Invalid credentials'
     });
   }
 });
@@ -87,7 +87,7 @@ router.get('/logout', (req, res, next) => {
     req.session.destroy((err) => {
       if (err) {
         res.json({
-          message: 'you cannot leave!'
+          message: 'logged out'
         });
       } else {
         // set a cookie in the past
@@ -98,7 +98,7 @@ router.get('/logout', (req, res, next) => {
     });
   } else {
     res.json({
-       message: 'you were not logged in to begin with!'
+      message: 'no session'
     });
   }
 });
